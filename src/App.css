@@ -88,6 +88,7 @@ img {
   content: '{';
   display: inline-block;
   animation: pulse 0.4s alternate infinite ease-in-out;
+  margin-top: 50px;
 }
 .loader:after {
   content: '}';
