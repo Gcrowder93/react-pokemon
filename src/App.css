@@ -1,11 +1,19 @@
 body {
   background-color: peachpuff;
-  /* line-height: 10px; */
+  /* background-image: url('zimpokemon.png'); */
+  /* background-image: url('cubone.png'); */
+  background-image: url('dittoface.png');
+  /* background-image: url('pikabackground.jpg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: contain; */
+  /* background-position: top; */
+  line-height: 10px;
+  margin: 15px;
 }
 
 .App {
   text-align: center;
-  text-shadow: 1px 2px 2px tomato;
+  text-shadow: 1px 1px 2px tomato;
   font-family: 'PressStart2PRegular';
   font-size: small;
 }
@@ -26,14 +34,14 @@ body {
 .textbar {
   background-color: peachpuff;
   color: black;
-  text-shadow: 1px 2px 2px tomato;
+  text-shadow: 1px 1px 2px tomato;
   font-size: large;
 }
 
 .button {
-  background-color: transparent;
+  background-color: peachpuff;
   color: black;
-  text-shadow: 1px 2px 2px tomato;
+  text-shadow: 1px 1px 2px tomato;
 }
 
 .button2 {
@@ -41,15 +49,21 @@ body {
 }
 
 .dropdown {
-  background-color: transparent;
+  background-color: peachpuff;
   color: black;
-  text-shadow: 1px 2px 2px tomato;
+  text-shadow: 1px 1px 2px tomato;
+}
+
+.dropdowntype {
+  background-color: peachpuff;
+  color: black;
+  text-shadow: 1px 1px 2px tomato;
 }
 
 img {
   height: 200px;
   align-content: center;
-  background-color: tomato;
+  background-color: peachpuff;
   border: solid 2px black;
   border-radius: 25%;
 }
