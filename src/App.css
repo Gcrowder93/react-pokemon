@@ -6,6 +6,8 @@ body {
 .App {
   text-align: center;
   text-shadow: 1px 2px 2px tomato;
+  font-family: 'PressStart2PRegular';
+  font-size: small;
 }
 
 .App-link {
@@ -34,10 +36,31 @@ body {
   text-shadow: 1px 2px 2px tomato;
 }
 
+.button2 {
+  height: 20px;
+}
+
 .dropdown {
   background-color: transparent;
   color: black;
   text-shadow: 1px 2px 2px tomato;
+}
+
+img {
+  height: 200px;
+  align-content: center;
+  background-color: tomato;
+  border: solid 2px black;
+  border-radius: 25%;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokename {
+  text-decoration-line: underline;
 }
 
 .loader {
