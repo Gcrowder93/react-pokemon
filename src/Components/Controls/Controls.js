@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Controls({ query, setQuery, setLoading }) {
+export default function Controls({ query, setQuery, setLoading, order, setOrder }) {
   return (
     <div className="searchbar">
       <input
@@ -12,6 +12,13 @@ export default function Controls({ query, setQuery, setLoading }) {
           setQuery(e.target.value);
         }}
       />
+      <div>
+        <br></br>
+      </div>
+      <select className="dropdown" value={order} onChange={(e) => setOrder(e.target.value)}>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
       <div>
         <br></br>
       </div>
