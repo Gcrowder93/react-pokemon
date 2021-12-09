@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { getPokemon } from './services/pokemon';
+import { getPokemon, getTypes } from './services/pokemon';
 import PokeList from './Components/PokeList/PokeList';
 import Controls from './Components/Controls/Controls';
 
@@ -10,22 +10,30 @@ function App() {
   const [query, setQuery] = useState('');
   const [order, setOrder] = useState('asc');
   const [currentPage, setCurrentPage] = useState(1);
-  const [allTypes, setType] = useState('');
-  const [types, filterTypes] = useState('');
-  const filterPokemon = pokemon.filter(
-    (types) => pokemon.includes(query) && (types.allTypes === allTypes || allTypes === 'Choose')
-  );
-  const fetchData = async () => {
-    const data = await getPokemon(query, order, currentPage, types);
-    setPokemon(data.results);
-    setTimeout(() => {
+  const [types, setTypes] = useState([]);
+  const [selectedType, setSelectedType] = useState('all');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getPokemon(query, order, currentPage, selectedType);
+      setPokemon(data.results);
+      // setTimeout(() => {
+      //   setLoading(false);
+      // }, 1000);
       setLoading(false);
-    }, 1000);
-  };
-  if (loading) {
+    };
+    if (loading) {
+      fetchData();
+    }
+  }, [loading, query, order, currentPage, selectedType]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTypes();
+      setTypes(data);
+    };
     fetchData();
-  }
-  loading, query, order, currentPage, types;
+  }, []);
 
   return (
     <div className="App">
@@ -36,9 +44,9 @@ function App() {
         setLoading={setLoading}
         order={order}
         setOrder={setOrder}
-        setType={setType}
-        filterTypes={filterTypes}
-        filterPokemon={filterPokemon}
+        types={types}
+        selectedType={selectedType}
+        setSelectedType={setSelectedType}
       />
 
       {loading && <span className="loader"></span>}
@@ -52,8 +60,6 @@ function App() {
           setCurrentPage={setCurrentPage}
           loading={loading}
           setLoading={setLoading}
-          types={types}
-          allTypes={allTypes}
         />
       )}
     </div>

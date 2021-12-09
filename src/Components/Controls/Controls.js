@@ -1,6 +1,5 @@
 import React from 'react';
-import { getPokemon } from '../../services/pokemon';
-import { getType } from '../Type/Type';
+import { Button, TextField, Select, MenuItem } from '@mui/material';
 
 export default function Controls({
   query,
@@ -8,17 +7,22 @@ export default function Controls({
   setLoading,
   order,
   setOrder,
+  selectedType,
+  setSelectedType,
   types,
-  allTypes,
-  setType,
-  filterPokemon,
+  handleNextPage,
+  // allTypes,
+  // setType,
+  // filterPokemon,
 }) {
   return (
     <div className="searchbar">
-      <input
+      <TextField
         className="textbar"
         type="text"
-        placeholder=" Search For Pokemon.."
+        varient="outlined"
+        label="Search"
+        // placeholder=" Search For Pokemon.."
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
@@ -27,16 +31,26 @@ export default function Controls({
       <div>
         <br></br>
       </div>
-      <select className="dropdown" value={order} onChange={(e) => setOrder(e.target.value)}>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
-      <div></div>
+      <Select className="dropdown" value={order} onChange={(e) => setOrder(e.target.value)}>
+        <MenuItem value="asc">Ascending</MenuItem>
+        <MenuItem value="desc">Descending</MenuItem>
+      </Select>
       <div>
         <br></br>
       </div>
-      <select className="dropdowntype" value={allTypes} onChange={(e) => setType(e.target.value)}>
-        <option value="Choose">Choose By Type</option>
+      <Select
+        value={selectedType}
+        className="dropdowntype"
+        onChange={(e) => setSelectedType(e.target.value)}
+      >
+        <MenuItem value="all">Types</MenuItem>
+        {types.map((type) => (
+          <MenuItem key={type} value={type}>
+            {type}
+          </MenuItem>
+        ))}
+      </Select>
+      {/* <option value="Choose">Choose By Type</option>
         <option value="Bug">Bug</option>
         <option value="Fairy">Fairy</option>
         <option value="Ghost">Ghost</option>
@@ -55,19 +69,35 @@ export default function Controls({
         <option value="Flying">Flying</option>
         <option value="Ice">Ice</option>
         <option value="Rock">Rock</option>
-      </select>
-      <div className="typebox">
-        {filterPokemon.map((types) => (
-          <pokemon key={types.id} {...types} />
-        ))}
-      </div>
+      </select> */}
 
       <div>
         <br></br>
       </div>
-      <button className="button" onClick={() => setLoading(true)}>
-        Search!
-      </button>
+      <Button
+        style={{
+          backgroundColor: 'tomato',
+        }}
+        variant="contained"
+        className="button"
+        onClick={() => setLoading(true)}
+      >
+        Search
+      </Button>
+      <br></br>
+
+      {/* <Button
+        style={{
+          backgroundColor: 'pink', 
+          //THIS IS A NEXT PAGE BUTTON FOR TOP OF PAGE,
+          //DOESNT REGISTER WITH CLICKS
+        }}
+        variant="contained"
+        className="button2"
+        onClick={handleNextPage}
+      >
+        Next Page
+      </Button> */}
     </div>
   );
 }

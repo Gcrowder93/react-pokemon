@@ -2,7 +2,7 @@ body {
   background-color: peachpuff;
   /* background-image: url('zimpokemon.png'); */
   /* background-image: url('cubone.png'); */
-  background-image: url('dittoface.png');
+  /* background-image: url('dittoface.png'); */
   /* background-image: url('pikabackground.jpg'); */
   /* background-repeat: no-repeat; */
   /* background-size: contain; */
@@ -32,38 +32,46 @@ body {
 }
 
 .textbar {
-  background-color: peachpuff;
+  background-color: tomato;
   color: black;
   text-shadow: 1px 1px 2px tomato;
   font-size: large;
 }
 
 .button {
-  background-color: peachpuff;
-  color: black;
-  text-shadow: 1px 1px 2px tomato;
+  /* background-color: peachpuff; */
+  /* color: black; */
+  height: 30px;
+  /* text-shadow: 1px 1px 2px tomato; */
+}
+
+.button:hover {
+  background: black;
+  background-color: white;
 }
 
 .button2 {
-  height: 20px;
+  height: 30px;
 }
 
 .dropdown {
-  background-color: peachpuff;
-  color: black;
+  background-color: transparent;
+  color: white;
+  height: 30px;
   text-shadow: 1px 1px 2px tomato;
 }
 
 .dropdowntype {
   background-color: peachpuff;
   color: black;
+  height: 30px;
   text-shadow: 1px 1px 2px tomato;
 }
 
 img {
   height: 200px;
   align-content: center;
-  background-color: peachpuff;
+  background-color: tomato;
   border: solid 2px black;
   border-radius: 25%;
 }
@@ -71,6 +79,12 @@ img {
 .grid {
   display: flex;
   flex-wrap: wrap;
+}
+
+.pagenumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pokename {

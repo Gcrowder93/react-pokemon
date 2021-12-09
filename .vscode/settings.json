@@ -1,3 +1,13 @@
 {
-  "cSpell.ignoreWords": ["dropdowntype", "pokename", "searchbar", "textbar", "typedata"]
+  "cSpell.ignoreWords": [
+    "browserslist",
+    "dropdowntype",
+    "peachpuff",
+    "pokename",
+    "searchbar",
+    "textbar",
+    "typebox",
+    "typedata",
+    "varient"
+  ]
 }
