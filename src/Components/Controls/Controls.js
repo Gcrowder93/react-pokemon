@@ -11,9 +11,6 @@ export default function Controls({
   setSelectedType,
   types,
   handleNextPage,
-  // allTypes,
-  // setType,
-  // filterPokemon,
 }) {
   return (
     <div className="searchbar">
@@ -21,8 +18,8 @@ export default function Controls({
         className="textbar"
         type="text"
         varient="outlined"
-        label="Search"
-        // placeholder=" Search For Pokemon.."
+        // label="◓Search Pokemon◓"
+        placeholder=" Search For Pokemon.."
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
@@ -50,30 +47,7 @@ export default function Controls({
           </MenuItem>
         ))}
       </Select>
-      {/* <option value="Choose">Choose By Type</option>
-        <option value="Bug">Bug</option>
-        <option value="Fairy">Fairy</option>
-        <option value="Ghost">Ghost</option>
-        <option value="Normal">Normal</option>
-        <option value="Steel">Steel</option>
-        <option value="Dark">Dark</option>
-        <option value="Fighting">Fighting</option>
-        <option value="Grass">Grass</option>
-        <option value="Poison">Poison</option>
-        <option value="Water">Water</option>
-        <option value="Dragon">Dragon</option>
-        <option value="Fire">Fire</option>
-        <option value="Ground">Ground</option>
-        <option value="Psychic">Psychic</option>
-        <option value="Electric">Electric</option>
-        <option value="Flying">Flying</option>
-        <option value="Ice">Ice</option>
-        <option value="Rock">Rock</option>
-      </select> */}
-
-      <div>
-        <br></br>
-      </div>
+      <br></br>
       <Button
         style={{
           backgroundColor: 'tomato',
@@ -82,7 +56,7 @@ export default function Controls({
         className="button"
         onClick={() => setLoading(true)}
       >
-        Search
+        ◓Search◓
       </Button>
       <br></br>
 

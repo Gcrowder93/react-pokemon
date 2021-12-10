@@ -77,9 +77,20 @@ img {
 }
 
 .grid {
+  display: grid;
+  grid-template-columns: 270px 270px;
+  grid-template-rows: 170px 170px 170px 170px;
+  gap: 185px 25px;
+  grid-template-areas:
+    '. . . .'
+    '. . . .'
+    '. . . .';
+}
+
+/* .grid {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 .pagenumber {
   display: flex;
