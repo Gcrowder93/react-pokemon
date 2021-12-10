@@ -10,7 +10,6 @@ export default function Controls({
   selectedType,
   setSelectedType,
   types,
-  handleNextPage,
 }) {
   return (
     <div className="searchbar">
